@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	File
 %define	pnam	Tail
-%include	/usr/lib/rpm/macros.perl
 Summary:	File-Tail perl module
 Summary(pl):	Modu³ perla File-Tail
 Name:		perl-File-Tail
 Version:	0.98
-Release:	4
-
+Release:	5
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -23,7 +22,7 @@ File-Tail - Perl tail.
 File-Tail - 'tail' dla Perla.
 
 %prep
-%setup -q -n File-Tail-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
