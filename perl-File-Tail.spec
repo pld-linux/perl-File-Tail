@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	File
 %define	pnam	Tail
-Summary:	File-Tail perl module
-Summary(pl):	Modu³ perla File-Tail
+Summary:	File::Tail perl module
+Summary(pl):	Modu³ perla File::Tail
 Name:		perl-File-Tail
 Version:	0.98
 Release:	5
@@ -16,10 +16,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-File-Tail - Perl tail.
+File::Tail - Perl tail.
 
 %description -l pl
-File-Tail - 'tail' dla Perla.
+File::Tail - 'tail' dla Perla.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
