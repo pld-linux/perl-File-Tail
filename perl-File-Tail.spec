@@ -24,11 +24,11 @@ Summary(uk):	Модуль для Perl File::Tail
 Summary(zh_CN):	File::Tail Perl дё©И
 Name:		perl-File-Tail
 Version:	0.98
-Release:	7
+Release:	8
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Time-HiRes
 BuildArch:	noarch
@@ -44,7 +44,8 @@ File::Tail - 'tail' dla Perla.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make}
 %{!?_without_tests:%{__make} test}
 
@@ -62,11 +63,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_sitelib}/File/Tail.pm
+%{perl_vendorlib}/File/Tail.pm
 # empty autosplit.ix
-#%dir %{perl_sitelib}/auto/File
-#%dir %{perl_sitelib}/auto/File/Tail
-#%%{perl_sitelib}/auto/File/Tail/autosplit.ix
+#%dir %{perl_vendorlib}/auto/File
+#%dir %{perl_vendorlib}/auto/File/Tail
+#%%{perl_vendorlib}/auto/File/Tail/autosplit.ix
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*
