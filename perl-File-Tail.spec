@@ -24,7 +24,7 @@ Summary(uk):	Модуль для Perl File::Tail
 Summary(zh_CN):	File::Tail Perl дё©И
 Name:		perl-File-Tail
 Version:	0.98
-Release:	8
+Release:	9
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
