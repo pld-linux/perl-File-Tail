@@ -3,7 +3,7 @@ Summary:	File-Tail perl module
 Summary(pl):	Modu³ perla File-Tail
 Name:		perl-File-Tail
 Version:	0.98
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
