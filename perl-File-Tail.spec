@@ -10,7 +10,8 @@ Summary(pl):	Modu³ Perla File::Tail - czytanie z ci±gle uaktualnianych plików
 Name:		perl-File-Tail
 Version:	0.98
 Release:	10
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	d16d67052577a5cdcde03d5cd2dc5569
