@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	File
-%define	pnam	Tail
+%define		pdir	File
+%define		pnam	Tail
 Summary:	File::Tail Perl module - reading from continuously updated files
 Summary(pl):	Modu³ Perla File::Tail - czytanie z ci±gle uaktualnianych plików
 Name:		perl-File-Tail
