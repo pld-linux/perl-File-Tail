@@ -13,7 +13,7 @@ BuildRequires:	perl >= 5.005_03-14
 BuildRequires:	perl-Time-HiRes
 %requires_eq	perl
 Requires:	%{perl_sitearch}
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 File-Tail - Perl tail.
