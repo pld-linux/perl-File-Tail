@@ -66,7 +66,7 @@ rm -rf $RPM_BUILD_ROOT
 # empty autosplit.ix
 #%dir %{perl_sitelib}/auto/File
 #%dir %{perl_sitelib}/auto/File/Tail
-#%{perl_sitelib}/auto/File/Tail/autosplit.ix
+#%%{perl_sitelib}/auto/File/Tail/autosplit.ix
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*
