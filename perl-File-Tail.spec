@@ -1,45 +1,36 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	File
 %define		pnam	Tail
-Summary:	File::Tail Perl module
-Summary(cs):	Modul File::Tail pro Perl
-Summary(da):	Perlmodul File::Tail
-Summary(de):	File::Tail Perl Modul
-Summary(es):	Módulo de Perl File::Tail
-Summary(fr):	Module Perl File::Tail
-Summary(it):	Modulo di Perl File::Tail
-Summary(ja):	File::Tail Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	File::Tail ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul File::Tail
-Summary(pl):	Modu³ Perla File::Tail
-Summary(pt):	Módulo de Perl File::Tail
-Summary(pt_BR):	Módulo Perl File::Tail
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl File::Tail
-Summary(sv):	File::Tail Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl File::Tail
-Summary(zh_CN):	File::Tail Perl Ä£¿é
+Summary:	File::Tail Perl module - reading from continuously updated files
+Summary(pl):	Modu³ Perla File::Tail - czytanie z ci±gle uaktualnianych plików
 Name:		perl-File-Tail
 Version:	0.98
-Release:	9
+Release:	10
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	d16d67052577a5cdcde03d5cd2dc5569
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 5.6
 BuildRequires:	perl-Time-HiRes
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-File::Tail - Perl tail.
+File::Tail is a Perl tail. The primary purpose of File::Tail is
+reading and analysing log files while they are being written, which is
+especialy useful if you are monitoring the logging process with a tool
+like Tobias Oetiker's MRTG.
 
 %description -l pl
-File::Tail - 'tail' dla Perla.
+File::Tail to 'tail' dla Perla. G³ównym przeznaczeniem modu³u jest
+czytanie i analizowanie plików logów podczas gdy s± zapisywane, co
+jest szczególnie przydatne przy monitorowaniu procesu logowania przy
+u¿yciu narzêdzi takich jak MRTG Tobiasa Oetikera.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -48,12 +39,14 @@ File::Tail - 'tail' dla Perla.
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
 %{__make}
-%{!?_without_tests:%{__make} test}
+
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install logwatch select_demo $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
