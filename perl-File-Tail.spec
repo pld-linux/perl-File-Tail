@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	File
 %define		pnam	Tail
@@ -20,7 +24,7 @@ Summary(uk):	Модуль для Perl File::Tail
 Summary(zh_CN):	File::Tail Perl дё©И
 Name:		perl-File-Tail
 Version:	0.98
-Release:	6
+Release:	7
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -42,6 +46,7 @@ File::Tail - 'tail' dla Perla.
 %build
 perl Makefile.PL
 %{__make}
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -58,7 +63,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_sitelib}/File/Tail.pm
-%{perl_sitelib}/auto/File
+# empty autosplit.ix
+#%dir %{perl_sitelib}/auto/File
+#%dir %{perl_sitelib}/auto/File/Tail
+#%{perl_sitelib}/auto/File/Tail/autosplit.ix
 %{_mandir}/man3/*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*
