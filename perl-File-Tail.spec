@@ -6,7 +6,7 @@
 %define		pdir	File
 %define		pnam	Tail
 Summary:	File::Tail Perl module - reading from continuously updated files
-Summary(pl):	Modu³ Perla File::Tail - czytanie z ci±gle uaktualnianych plików
+Summary(pl.UTF-8):   ModuÅ‚ Perla File::Tail - czytanie z ciÄ…gle uaktualnianych plikÃ³w
 Name:		perl-File-Tail
 Version:	0.99.1
 Release:	1
@@ -26,11 +26,11 @@ reading and analysing log files while they are being written, which is
 especialy useful if you are monitoring the logging process with a tool
 like Tobias Oetiker's MRTG.
 
-%description -l pl
-File::Tail to 'tail' dla Perla. G³ównym przeznaczeniem modu³u jest
-czytanie i analizowanie plików logów podczas gdy s± zapisywane, co
-jest szczególnie przydatne przy monitorowaniu procesu logowania przy
-u¿yciu narzêdzi takich jak MRTG Tobiasa Oetikera.
+%description -l pl.UTF-8
+File::Tail to 'tail' dla Perla. GÅ‚Ã³wnym przeznaczeniem moduÅ‚u jest
+czytanie i analizowanie plikÃ³w logÃ³w podczas gdy sÄ… zapisywane, co
+jest szczegÃ³lnie przydatne przy monitorowaniu procesu logowania przy
+uÅ¼yciu narzÄ™dzi takich jak MRTG Tobiasa Oetikera.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
