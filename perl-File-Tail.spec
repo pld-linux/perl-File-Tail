@@ -6,7 +6,7 @@
 %define		pdir	File
 %define		pnam	Tail
 Summary:	File::Tail Perl module - reading from continuously updated files
-Summary(pl.UTF-8):   Moduł Perla File::Tail - czytanie z ciągle uaktualnianych plików
+Summary(pl.UTF-8):	Moduł Perla File::Tail - czytanie z ciągle uaktualnianych plików
 Name:		perl-File-Tail
 Version:	0.99.1
 Release:	1
