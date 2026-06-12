@@ -7,13 +7,13 @@
 Summary:	File::Tail Perl module - reading from continuously updated files
 Summary(pl.UTF-8):	Moduł Perla File::Tail - czytanie z ciągle uaktualnianych plików
 Name:		perl-File-Tail
-Version:	0.99.3
-Release:	2
+Version:	1.3
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/File/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ef0fb7bcb4181ba593f4a09940f61d1c
+# Source0-md5:	252635f89ec18cb871c0b45ed64b3f63
 URL:		http://search.cpan.org/dist/File-Tail/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
